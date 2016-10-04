@@ -65,15 +65,7 @@ For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_s
 - *console.rb*
   - Interact with models and data in the database via REPL.
 
-### Goal: Seed the database.
-
-In this repo are three files of note: `artist_data.rb`, `song_data.rb` and `seeds.rb`. We want to use the `seeds.rb` file to seed our database.
-
-#### Turn & Talk (10 minutes / 0:25)
-
-> 5 minutes exercise. 5 minutes review.
-
-With a partner, explore the four aforementioned files. Be prepared to answer the following questions. Also write down any other observations you might have.
+#### Explore the Code (5 minutes / 0:20)
 
 #### Questions
 
@@ -88,13 +80,13 @@ With a partner, explore the four aforementioned files. Be prepared to answer the
 
 We often start building an app by describing the data model. We do this by creating an ERD, defining our schema according to that ERD, loading it into a database, and then building our ActiveRecord classes. These ActiveRecord classes are what we refer to as **models**.
 
-### You Do: ERD (5 minutes / 0:30)
+### You Do: ERD (5 minutes / 0:25)
 
 > 3 minutes exercise. 2 minutes review.
 
 Spend 5 minutes diagramming the ERD for Tunr.
 
-### You Do: Define the Schema (5 minutes / 0:35)
+### You Do: Define the Schema (5 minutes / 0:30)
 
 Create the schema file in the db directory...
 
@@ -143,13 +135,13 @@ $ psql -d tunr_db < db/schema.sql
 
 </details>
 
-### You Do: Define ActiveRecord Models (5 minutes / 0:40)
+### You Do: Define ActiveRecord Models (5 minutes / 0:35)
 
 Create files for your `Artist` and `Song` classes in the `models` folder. Remember that the file names should be singular, to match the class name (e.g., `models/song.rb`)
 
 > Is there any old code that we can leverage?
 
-## We Do: Load Seed Data (5 minutes / 0:45)
+## We Do: Load Seed Data (5 minutes / 0:40)
 
 Take a look at `db/seeds.rb`. We've taken some data from the iTunes API, and formatted / saved it so we can load it into our database using AR.
 
@@ -170,7 +162,7 @@ $ ruby db/seeds.rb
 
 </details>
 
-## Setting up our Sinatra app (10 minutes / 0:55)
+## Setting up our Sinatra app (10 minutes / 0:50)
 
 > At this point in the lesson, you can either proceed with your code or checkout the `solution_step_1` branch to continue.
 
@@ -195,7 +187,7 @@ require_relative 'models/artist'
 require_relative 'models/song'
 ```
 
-## Break (10 minutes / 1:05)
+## Break (10 minutes / 1:00)
 
 ### Important Note
 
@@ -205,7 +197,7 @@ Reference the code in the I Do's to complete the objectives for Tunr. The `wdi_a
 
 Step by step, you're going to add the 7 RESTful routes for artists along with their corresponding views. We're also going to use ActiveRecord to make sure that the data is being persisted.
 
-### I Do: Index - WDI App (15 minutes / 1:20)
+### I Do: Index - WDI App (15 minutes / 1:15)
 
 Now that we have the basic structure in place, let's start to put everything together. One of the most common features in the web today is the `index`. This is a feature that lists out collections. In your case you might want a feature to list out all of the artists for your app. That's what the index does.
 
@@ -239,11 +231,11 @@ In `views/instructors/index.erb`...
 
 If we run the application - `$ ruby app.rb` - and visit `http://localhost:4567/instructors`, we can see all the instructors' first names.
 
-### You Do: Index - Tunr (15 minutes / 1:35)
+### You Do: Index - Tunr (15 minutes / 1:30)
 
 > 10 minutes exercise. 5 minutes review.
 
-### I Do: Show - WDI App (10 minutes / 1:45)
+### I Do: Show - WDI App (10 minutes / 1:40)
 
 Another common feature in web apps is to have a page dedicated to a single item stored in the database. We often refer to this functionality as "show."
 
@@ -281,7 +273,7 @@ in `views/instructors/index.erb`...
 <% end %>
 ```
 
-## You Do: Show - Tunr (10 minutes / 1:55)
+## You Do: Show - Tunr (10 minutes / 1:50)
 
 > 5 minutes exercise. 5 minutes review.
 
