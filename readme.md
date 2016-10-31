@@ -193,7 +193,7 @@ require_relative 'models/song'
 
 From this point, I will be coding the I do portion of the new material in a `wdi_app`. It has a very similar structure as `tunr`. In the `wdi_app` we'll have `instructors` and `students` tables. This is what the schema looks like for the `wdi_app`:
 
-```
+```sql
 CREATE TABLE instructors(
   id SERIAL PRIMARY KEY,
   name VARCHAR NOT NULL,
