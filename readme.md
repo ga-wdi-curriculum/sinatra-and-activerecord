@@ -157,7 +157,7 @@ $ ruby db/seeds.rb
   ```rb
   Artist.all  # Returns all artists
   Song.all  # Returns all songs
-  Artist.first.songs  # Returns all songs that belong to the first artists
+  Artist.first.songs  # Returns all songs that belong to the first artist
   ```
 
 </details>
