@@ -191,7 +191,23 @@ require_relative 'models/song'
 
 ### Important Note
 
-From this point, I will be coding the I do portion of the new material in a `wdi_app` the same domain used in the active record class. You will continue to code on Tunr. If at any point your code contains the words `wdi`, `instructor`, or `student` in any variant, you are doing something incorrectly.
+From this point, I will be coding the I do portion of the new material in a `wdi_app`. It has a very similar structure as `tunr`. In the `wdi_app` we'll have `instructors` and `students` tables. This is what the schema looks like for the `wdi_app`:
+
+```sql
+CREATE TABLE instructors(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age INT NOT NULL
+);
+CREATE TABLE students(
+  id SERIAL PRIMARY KEY,
+  name VARCHAR NOT NULL,
+  age INT NOT NULL,
+  instructor_id INT NOT NULL
+);
+```
+
+You will continue to code on `Tunr` and just watch when the instructor is coding on `wdi_app`. If at any point your code contains the words `wdi`, `instructor`, or `student` in any variant, you are doing something incorrectly.
 
 Reference the code in the I Do's to complete the objectives for Tunr. The `wdi_app` codebase has all of the same working parts as the one you're currently working with.
 
