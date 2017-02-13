@@ -269,7 +269,7 @@ Now we'll create a corresponding view in `views/instructors/show.erb`...
 ```html
 <h2><a href="/instructors">All Instructors</a></h2>
 <div class="instructor">
-  <p>Instructor First Name: <%= @instructor.name %></p>
+  <p>Instructor Name: <%= @instructor.name %></p>
   <p>Instructor Age: <%= @instructor.age %></p>
 </div>
 ```
@@ -350,7 +350,7 @@ And in `views/index.erb`...
 <% end %>
 <h2>Enter New Name Here and Hit Enter</h2>
 <form action="add_name" method="post">
-  <input name='first_name'>
+  <input name='name'>
 </form>
 ```
 
@@ -360,7 +360,7 @@ When I enter a new name it gets added to the list! Let's take a closer look at t
 
 ```html
 <form action="add_name" method="post">
-  <input name='first_name'>
+  <input name='name'>
 </form>
 ```
 
