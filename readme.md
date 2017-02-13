@@ -241,7 +241,7 @@ In `views/instructors/index.erb`...
 ```html
 <h2>All Instructors</h2>
 <% @instructors.each do |instructor|%>
-  <p><%= instructor.first_name %></p>
+  <p><%= instructor.name %></p>
 <% end %>
 ```
 
@@ -269,12 +269,12 @@ Now we'll create a corresponding view in `views/instructors/show.erb`...
 ```html
 <h2><a href="/instructors">All Instructors</a></h2>
 <div class="instructor">
-  <p>Instructor First Name: <%= @instructor.first_name %></p>
+  <p>Instructor First Name: <%= @instructor.name %></p>
   <p>Instructor Age: <%= @instructor.age %></p>
 </div>
 ```
 
-All we're doing here is displaying the instructor's first name and age.
+All we're doing here is displaying the instructor's name and age.
 
 We also decided to improve the user experience and add a link to go back to the index page. We should also update the index view so that each instructor name links to its corresponding show page...
 
@@ -284,7 +284,7 @@ in `views/instructors/index.erb`...
 <h2>All Instructors</h2>
 <% @instructors.each do |instructor|%>
   <p class="instructor">
-    <a href="/instructors/<%= instructor.id %>"><%= instructor.first_name %></a>
+    <a href="/instructors/<%= instructor.id %>"><%= instructor.name %></a>
   </p>
 <% end %>
 ```
@@ -345,7 +345,7 @@ And in `views/index.erb`...
 
 ```html
 <h1>All Names</h1>
-<% @first_names.each do |name| %>
+<% @names.each do |name| %>
   <div><%= name %></div>
 <% end %>
 <h2>Enter New Name Here and Hit Enter</h2>
@@ -406,10 +406,7 @@ And then the corresponding view, `views/instructors/new.erb`...
 
 <form action="/instructors" method="post" >
   <label>Name:</label>
-  <input name="first_name">
-
-  <label>Last Name:</label>
-  <input name="last_name">
+  <input name="name">
 
   <label>Age:</label>
   <input name="age">
@@ -425,10 +422,7 @@ There's actually a better way to do this. We can "namespace" our parameter in fo
 
 <form action="/instructors" method="post" >
   <label>Name:</label>
-  <input name="instructor[first_name]">
-
-  <label>Last Name:</label>
-  <input name="instructor[last_name]">
+  <input name="instructor[name]">
 
   <label>Age:</label>
   <input name="instructor[age]">
@@ -488,11 +482,8 @@ To make a `put` request, we need to 'fake it' in our form with a hidden input fo
 <form action="/instructors/<%= @instructor.id %>" method="post">
   <input type="hidden" name="_method" value="put">
 
-  <label for="instructor[first_name]">First Name:</label>
-  <input name="instructor[first_name]" value="<%= @instructor.first_name %>">
-
-  <label for="instructor[last_name]">Last Name:</label>
-  <input name="instructor[last_name]" value="<%= @instructor.last_name %>">
+  <label for="instructor[name]">Name:</label>
+  <input name="instructor[name]" value="<%= @instructor.name %>">
 
   <label for="instructor[age]">Age:</label>
   <input name="instructor[age]" value="<%= @instructor.age %>">
