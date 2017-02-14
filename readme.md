@@ -350,7 +350,7 @@ And in `views/index.erb`...
 <% end %>
 <h2>Enter New Name Here and Hit Enter</h2>
 <form action="add_name" method="post">
-  <input name='name'>
+  <input name='first_name'>
 </form>
 ```
 
