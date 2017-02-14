@@ -380,7 +380,7 @@ In `app.rb`...
 
 ```ruby
 post '/instructors' do
-  @instructor = Instructor.create(first_name: params[:name], age: params[:age])
+  @instructor = Instructor.create(name: params[:name], age: params[:age])
   redirect "/instructors/#{@instructor.id}"
 end
 ```
@@ -459,7 +459,7 @@ Another common feature in web applications is the ability to modify data in a da
 
 In `app.rb`...
 
-```
+```rb
 get "/instructors/:id/edit" do
   @instructor = Instructor.find(params[:id])
   erb(:"instructors/edit")
