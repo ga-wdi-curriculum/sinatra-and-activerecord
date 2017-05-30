@@ -69,13 +69,12 @@ For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_s
 
 #### Questions
 
-Share your answers in this issue.
+Share your answers in [this issue](https://github.com/ga-wdi-lessons/sinatra-and-activerecord/issues/4)
 
 - What is the purpose of the `artist_data.rb` and `song_data.rb` files?
 - There are two enumerators in `seeds.rb`. What are they doing?
 - What is `require_relative` and why is it used in this file so many times in `seeds.rb`?
-  - What file(s) will we need to get this work?
-  - What file(s) will we need that aren't being required currently?
+
 
 
 ## Data Model
