@@ -42,9 +42,9 @@ How exactly can ActiveRecord and Sinatra work together? Their relationship is be
 
 As our apps get more complex, they begin to require lots of different dependencies. It's very important to start separating our concerns.
 
-Below is a summary of the important folders and files in our app. It's important to note that some of these are expected by sinatra (e.g., `views`) and the rest are just convention to match our upcoming transition to Rails.
+Below is a summary of the important folders and files in our app. It's important to note that some of these are expected by Sinatra (e.g., `views`) and the rest are just convention to match our upcoming transition to Rails.
 
-For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_sinatra). Go ahead and clone it and change directories into the `tunr` folder.
+For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_sinatra). Go ahead and clone it and change directories into the `tunr_sinatra` folder. Run `bundle install` as well.
 
 **`tunr`**
 - **`db`**
@@ -68,6 +68,8 @@ For this lesson, we'll be using [Tunr](http://github.com/ga-wdi-exercises/tunr_s
 #### Explore the Code (5 minutes / 0:20)
 
 #### Questions
+
+Share your answers in this issue.
 
 - What is the purpose of the `artist_data.rb` and `song_data.rb` files?
 - There are two enumerators in `seeds.rb`. What are they doing?
@@ -98,20 +100,10 @@ Using our ERD, fill in `db/schema.sql` with SQL to create the Schema. Look at th
 
 > Not sure what the schema should look like? Use the [schema from the Library SQL exercise](https://github.com/ga-wdi-exercises/library_sql/blob/master/schema.sql) as a reference.
 
-Once your schema is good to go, create the Tunr database via the command line (not `psql`)...
-
-```bash
-$ createdb tunr_db
-```
-
-Then load the schema into the database, again from the command line...
-
-```bash
-$ psql -d tunr_db < db/schema.sql
-```
+**STOP**
 
 <details>
-  <summary><strong>If you get stuck...</strong></summary>
+  <summary><strong>Change out schema...</strong></summary>
 
   ```sql
   DROP TABLE IF EXISTS songs;
@@ -133,11 +125,24 @@ $ psql -d tunr_db < db/schema.sql
   );
   ```
 
+  Once your schema is good to go, create the Tunr database via the command line (not `psql`)...
+
+  ```bash
+  $ createdb tunr_db
+  ```
+
 </details>
+
+Then load the schema into the database, again from the command line...
+
+```bash
+$ psql -d tunr_db < db/schema.sql
+```
+
 
 ### You Do: Define ActiveRecord Models (5 minutes / 0:35)
 
-Create files for your `Artist` and `Song` classes in the `models` folder. Remember that the file names should be singular, to match the class name (e.g., `models/song.rb`)
+Create a `models` folder and add files for your `Artist` and `Song` classes. Remember that the file names should be singular, to match the class name (e.g., `models/song.rb`)
 
 > Is there any old code that we can leverage?
 
@@ -360,7 +365,7 @@ When I enter a new name it gets added to the list! Let's take a closer look at t
 
 ```html
 <form action="add_name" method="post">
-  <input name='name'>
+  <input name='first_name'>
 </form>
 ```
 
