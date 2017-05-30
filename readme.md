@@ -124,13 +124,13 @@ Using our ERD, fill in `db/schema.sql` with SQL to create the Schema. Look at th
   );
   ```
 
+</details>
+
   Once your schema is good to go, create the Tunr database via the command line (not `psql`)...
 
   ```bash
   $ createdb tunr_db
   ```
-
-</details>
 
 Then load the schema into the database, again from the command line...
 
